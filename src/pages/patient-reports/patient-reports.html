@@ -1,0 +1,61 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Patient Report</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div *ngIf="companyListButtonClicked">
+    <ion-list>
+      <button ion-item *ngFor="let item of items" (click)="itemClick(item)">
+        {{item.item}}
+      </button>
+    </ion-list>
+  </div>
+
+
+  <div *ngIf="ManageCompanyButtonClicked">
+    <ion-list>
+      <ion-item>
+        <ion-label stacked>First Name</ion-label>
+        <ion-label>{{first_name}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Last Name</ion-label>
+        <ion-label>{{last_name}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Gender</ion-label>
+        <ion-label>{{gender}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Patient Age</ion-label>
+        <ion-label>{{age}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Mobile No</ion-label>
+        <ion-label>{{mobile}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>is Smoker?</ion-label>
+        <ion-label>{{isSmoke}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>is Alcoholic?</ion-label>
+        <ion-label>{{isAlcoholic}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Blood Group</ion-label>
+        <ion-label>{{blood_group}}</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>

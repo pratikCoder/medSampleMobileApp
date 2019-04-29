@@ -1,0 +1,43 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Sign Up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-input placeholder="FIRST NAME" [(ngModel)]="first_name" type="text" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="LAST NAME" [(ngModel)]="last_name" type="text" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="PASSWORD" [(ngModel)]="password" type="password" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="REPETE PASSWORD" [(ngModel)]="repass" type="password" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="EMAIL ID" [(ngModel)]="email" type="email" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="CONTACT NO" [(ngModel)]="mbl" type="tel" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="ROLE" [(ngModel)]="role" type="text" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="ROLE DESCRIPTION" [(ngModel)]="role_desc" type="text" clearInput></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button full (click)="goRegister()">Register</button>
+  <br>
+  <button ion-button full (click)="cancel()">Cancel</button>
+  <br>
+  <button ion-button full color="light" (click)="clear()">Clear</button>
+</ion-content>

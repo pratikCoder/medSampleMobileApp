@@ -1,0 +1,60 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <div *ngIf="companyListButtonClicked">
+        <ion-title>My Patient List</ion-title>
+      </div>
+      <div *ngIf="ManageCompanyButtonClicked">
+        <ion-title>Add Test Details</ion-title>
+      </div>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div *ngIf="companyListButtonClicked">
+    <ion-list>
+      <button ion-item *ngFor="let item of items" (click)="itemClick(item)">
+        {{item.item}}
+      </button>
+    </ion-list>
+  </div>
+
+
+  <div *ngIf="ManageCompanyButtonClicked">
+    <ion-list>
+      <ion-item inline>
+        <ion-select placeholder="SMOKER" [(ngModel)]="is_smoker" name="is_smoker" clearInput>
+          <ion-option value="True">Yes</ion-option>
+          <ion-option value="False">No</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-select placeholder="ALCOHOLIC" [(ngModel)]="is_alcoholic" name="is_alcoholic" clearInput>
+          <ion-option value="True">Yes</ion-option>
+          <ion-option value="False">No</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-input placeholder="BLOOD GROUP" [(ngModel)]="blood_group" name="blood_group" clearInput></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <button ion-button full (click)="addPatientTest()">Submit</button>
+    <br>
+    <button ion-button full color="light" (click)="cancel()">Cancel</button>
+    <br>
+    <button ion-button block color="blue" (click)="resetForm()">Clear</button>
+  </div>
+
+</ion-content>
